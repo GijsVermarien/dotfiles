@@ -135,7 +135,13 @@ alias :q=exit
 # Alternative (blocks terminal for 0-3ms)
 cat ~/.cache/wal/sequences
 
+# Config for managing dotfiles
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 export PATH="$PATH:$HOME/.bin"
-alias config='/usr/bin/git --git-dir=/home/gijsv/.cfg/ --work-tree=/home/gijsv'
+alias config='/usr/bin/git --git-dir=/home/gijsv/.cfg/ --work-tree=/home/gijsv' 
+
+# custom alias
+alias lal="ls -la"
+alias lsl="ls -l"
+

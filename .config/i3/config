@@ -9,6 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Environment variables
+
 #Setup i3 gaps
 gaps inner 10  
 gaps outer 5
@@ -38,7 +40,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -175,7 +178,9 @@ exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113 HorizTwoF
 exec --no-startup-id syndaemon -i 0.5 -K -R -d 
 
 # exec --no-startup-id feh --bg-scale ~/wallpaper/china_wallpaper.jpg
-exec --no-startup-id feh --bg-fill ~/wallpaper/minimal_tiles.png
+# exec --no-startup-id feh --bg-fill ~/wallpaper/minimal_tiles.png
+# exec --no-startup-id feh --bg-fill ~/.wallpaper/glob_clust.jpeg
+exec --no-startup-id feh --bg-fill ~/.wallpapers/minimal_forest.jpg
 
 #Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
@@ -226,3 +231,6 @@ bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 # be able to move workspaces
 bindsym Shift+$mod+bracketright move workspace to output right
 bindsym Shift+$mod+bracketleft move workspace to output left
+
+# Start compton for opaque windows
+exec_always --no-startup-id compton -b 
